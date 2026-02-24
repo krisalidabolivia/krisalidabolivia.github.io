@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Repertorio Cumbia Sureña/Chicha | Agrupación Krisálida</title>
+
+  <!-- Usa tu mismo CSS principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Estilos SOLO para esta página -->
+  <style>
+    /* Fondo con imagen + overlay para que el texto se lea */
+    .page-bg{
+      min-height: 100vh;
+      background:
+        linear-gradient(90deg, rgba(7,17,28,.92), rgba(7,17,28,.55)),
+        url("img/fondoimagen1.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* PC */
+    }
+
+    .page-wrap{
+      padding: 90px 0 60px;
+    }
+
+    .page-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom: 22px;
+    }
+
+    .page-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .page-brand img{
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      object-fit: cover;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,.45));
+    }
+
+    .page-brand .name{
+      font-weight: 1000;
+      letter-spacing: .3px;
+    }
+
+    .page-hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:start;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 900px){
+      .page-hero{ grid-template-columns: 1fr; }
+    }
+
+    /* Tabla */
+    .table-wrap{
+      overflow: hidden; /* ✅ no scroll lateral */
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.28);
+    }
+
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 0;          /* ✅ QUITAMOS el min-width grande */
+      table-layout: fixed;   /* ✅ se adapta al ancho del celular */
+    }
+
+    th, td{
+      padding: 12px 14px;
+      text-align:left;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+
+      /* ✅ Hace que el texto baje de línea en celular */
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    th{
+      color: #eaf6ff;
+      font-weight: 1000;
+      background: rgba(255,255,255,.06);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+    }
+
+    td{
+      color: rgba(234,246,255,.92);
+    }
+
+    /* ✅ Anchos de columnas para que no “empujen” */
+    th:nth-child(1), td:nth-child(1){ width: 44px; } /* # */
+    th:nth-child(2), td:nth-child(2){ width: 52%; } /* Tema */
+    th:nth-child(3), td:nth-child(3){ width: 48%; } /* Artista */
+
+    .taglist{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .tag{
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(247,201,75,.28);
+      background: rgba(255,255,255,.06);
+      font-weight: 800;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .note{
+      margin-top: 12px;
+      font-size: .92rem;
+      color: var(--muted);
+    }
+
+    /* ✅ Ajustes finos en celular */
+    @media (max-width: 700px){
+      .page-wrap{ padding: 70px 0 45px; }
+
+      th, td{
+        padding: 10px 10px;
+        font-size: .92rem;
+      }
+
+      .tag{
+        font-size: .88rem;
+        padding: 7px 10px;
+      }
+
+      /* ✅ Mantiene la imagen, pero evita lag en móviles */
+      .page-bg{
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-bg">
+    <!-- Header simple -->
+    <header class="header">
+      <div class="container header__inner">
+        <a class="brand" href="index.html" aria-label="Volver al inicio">
+          <img src="img/logo.png" alt="Logo Krisálida" class="brand__logo" />
+          <span class="brand__name">Agrupación Krisálida</span>
+        </a>
+
+        <a class="btn btn--small" href="index.html">Volver</a>
+      </div>
+    </header>
+
+    <main class="page-wrap">
+      <div class="container">
+
+        <div class="page-top">
+          <div class="page-brand">
+            <img src="img/logo.png" alt="Logo Krisálida">
+            <div>
+              <div class="name">Agrupación Krisálida</div>
+              <div class="muted small">Repertorio oficial • Contratación directa</div>
+            </div>
+          </div>
+
+          <a class="btn btn--ghost btn--small" href="#tabla">Ver lista de temas ↓</a>
+        </div>
+
+        <section class="page-hero">
+          <div class="card">
+            <h1 class="title-gold">Repertorio Cumbia Sureña/Chicha</h1>
+            <p class="muted">
+              Ritmo, sabor y raíces. Nuestro repertorio de Cumbia Chicha / Sureña está diseñado para llenar la pista con clásicos inolvidables y una energía que no deja a nadie sentado.
+            </p>
+
+            <div class="taglist">
+              <span class="tag">Maroyu</span>
+              <span class="tag">Iberia</span>
+              <span class="tag">Los Capos</span>
+              <span class="tag">Kumbia Fusión</span>
+              <span class="tag">Coralí</span>
+              <span class="tag">Los Genios</span>
+              <span class="tag">Enlace</span>
+              <span class="tag">Los Chicos Fieles</span>
+              <span class="tag">Amor Sagrado</span>
+              <span class="tag">Russkaya</span>
+            </div>
+
+            <p class="note"></p>
+
+            <div style="margin-top:14px;">
+              <a class="btn" href="index.html#contacto">Contratar ahora</a>
+              <a class="btn btn--ghost" href="index.html#servicios">Ver estilos</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>¿Qué incluye este bloque?</h3>
+            <ul class="list">
+              <li>Entrada con clásicos chicha</li>
+              <li>Medley de temas sureños/chicheros</li>
+              <li>Repertorio tradicional y moderno</li>
+              <li>Duración 1 Hora</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card" id="tabla">
+          <h2>Lista de temas</h2>
+
+          <div class="table-wrap" style="margin-top:12px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Tema</th>
+                  <th>Artista / Autor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Sola</td><td>Iberia</td></tr>
+                <tr><td>2</td><td>Nena</td><td>Kumbia Fusión</td></tr>
+                <tr><td>3</td><td>Solamente Un Amor</td><td>Kumbia Fusión</td></tr>
+                <tr><td>4</td><td>Dile</td><td>Iberia</td></tr>
+                <tr><td>5</td><td>No Te Quiero Ver</td><td>Maroyu</td></tr>
+                <tr><td>6</td><td>El Tomador</td><td>Los Genios</td></tr>
+                <tr><td>7</td><td>No Me Vuelvo A Enamorar</td><td>Enlace</td></tr>
+                <tr><td>8</td><td>Prometi No Enamorarme</td><td>Corali</td></tr>
+                <tr><td>9</td><td>Ojitos Negros</td><td>Enlace</td></tr>
+                <tr><td>10</td><td>Por Ella</td><td>Maroyu</td></tr>
+                <tr><td>11</td><td>Yo Me Enamoré</td><td>Los Chicos Fieles</td></tr>
+                <tr><td>12</td><td>Chica Vacilona</td><td>Iberia</td></tr>
+                <tr><td>13</td><td>Me Rompió El Corazón</td><td>Los Capos</td></tr>
+                <tr><td>14</td><td>Pica Pica</td><td>Amor Sagrado</td></tr>
+                <tr><td>15</td><td>Mariposita</td><td>Los Capos</td></tr>
+                <tr><td>16</td><td>Mis Cuernos</td><td>Sueños De Amor</td></tr>
+                <tr><td>17</td><td>Cortavenas</td><td>Sueños De Amor</td></tr>
+                <tr><td>18</td><td>Vuelve A Mi Lado</td><td>Repiola</td></tr>
+                <tr><td>19</td><td>Quiero Ser Tu Corazón</td><td>Russkaya</td></tr>
+                <tr><td>20</td><td>Entre Mis Sueños</td><td>Los Capos</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="margin-top:14px;">
+            <a class="btn" href="index.html#contacto">Contratación directa</a>
+            <a class="btn btn--ghost" href="index.html">Volver al inicio</a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

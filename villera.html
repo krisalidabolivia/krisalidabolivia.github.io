@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Repertorio Cumbia Villera | Agrupación Krisálida</title>
+
+  <!-- Usa tu mismo CSS principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Estilos SOLO para esta página -->
+  <style>
+    /* Fondo con imagen + overlay para que el texto se lea */
+    .page-bg{
+      min-height: 100vh;
+      background:
+        linear-gradient(90deg, rgba(7,17,28,.92), rgba(7,17,28,.55)),
+        url("img/fondoimagen1.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* PC */
+    }
+
+    .page-wrap{
+      padding: 90px 0 60px;
+    }
+
+    .page-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom: 22px;
+    }
+
+    .page-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .page-brand img{
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      object-fit: cover;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,.45));
+    }
+
+    .page-brand .name{
+      font-weight: 1000;
+      letter-spacing: .3px;
+    }
+
+    .page-hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:start;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 900px){
+      .page-hero{ grid-template-columns: 1fr; }
+    }
+
+    /* Tabla */
+    .table-wrap{
+      overflow: hidden; /* ✅ no scroll lateral */
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.28);
+    }
+
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 0;          /* ✅ QUITAMOS el min-width grande */
+      table-layout: fixed;   /* ✅ se adapta al ancho del celular */
+    }
+
+    th, td{
+      padding: 12px 14px;
+      text-align:left;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+
+      /* ✅ Hace que el texto baje de línea en celular */
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    th{
+      color: #eaf6ff;
+      font-weight: 1000;
+      background: rgba(255,255,255,.06);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+    }
+
+    td{
+      color: rgba(234,246,255,.92);
+    }
+
+    /* ✅ Anchos de columnas para que no “empujen” */
+    th:nth-child(1), td:nth-child(1){ width: 44px; } /* # */
+    th:nth-child(2), td:nth-child(2){ width: 52%; } /* Tema */
+    th:nth-child(3), td:nth-child(3){ width: 48%; } /* Artista */
+
+    .taglist{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .tag{
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(247,201,75,.28);
+      background: rgba(255,255,255,.06);
+      font-weight: 800;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .note{
+      margin-top: 12px;
+      font-size: .92rem;
+      color: var(--muted);
+    }
+
+    /* ✅ Ajustes finos en celular */
+    @media (max-width: 700px){
+      .page-wrap{ padding: 70px 0 45px; }
+
+      th, td{
+        padding: 10px 10px;
+        font-size: .92rem;
+      }
+
+      .tag{
+        font-size: .88rem;
+        padding: 7px 10px;
+      }
+
+      /* ✅ Mantiene la imagen, pero evita lag en móviles */
+      .page-bg{
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-bg">
+    <!-- Header simple -->
+    <header class="header">
+      <div class="container header__inner">
+        <a class="brand" href="index.html" aria-label="Volver al inicio">
+          <img src="img/logo.png" alt="Logo Krisálida" class="brand__logo" />
+          <span class="brand__name">Agrupación Krisálida</span>
+        </a>
+
+        <a class="btn btn--small" href="index.html">Volver</a>
+      </div>
+    </header>
+
+    <main class="page-wrap">
+      <div class="container">
+
+        <div class="page-top">
+          <div class="page-brand">
+            <img src="img/logo.png" alt="Logo Krisálida">
+            <div>
+              <div class="name">Agrupación Krisálida</div>
+              <div class="muted small">Repertorio oficial • Contratación directa</div>
+            </div>
+          </div>
+
+          <a class="btn btn--ghost btn--small" href="#tabla">Ver lista de temas ↓</a>
+        </div>
+
+        <section class="page-hero">
+          <div class="card">
+            <h1 class="title-gold">Repertorio Cumbia Villera</h1>
+            <p class="muted">
+              Este repertorio está pensado para prender la pista con clásicos y hits actuales.
+              (15 años, boda, promo, empresas, etc.).
+            </p>
+
+            <div class="taglist">
+              <span class="tag">Nene Malo</span>
+              <span class="tag">18 Kilates</span>
+              <span class="tag">Damas Gratis</span>
+              <span class="tag">Marilyn</span>
+              <span class="tag">Yerba Brava</span>
+              <span class="tag">La Banda De Lechugas</span>
+              <span class="tag">El Polaco</span>
+              <span class="tag">Ke Personajes</span>
+              <span class="tag">Grupo Frontera</span>
+              <span class="tag">Eh Guacho</span>
+            </div>
+
+            <p class="note"></p>
+
+            <div style="margin-top:14px;">
+              <a class="btn" href="index.html#contacto">Contratar ahora</a>
+              <a class="btn btn--ghost" href="index.html#servicios">Ver estilos</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>¿Qué incluye este bloque?</h3>
+            <ul class="list">
+              <li>Arranque fuerte</li>
+              <li>Medley de clásicos</li>
+              <li>Repertorio juvenil</li>
+              <li>Duración 1 Hora</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card" id="tabla">
+          <h2>Lista de temas</h2>
+
+          <div class="table-wrap" style="margin-top:12px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Tema</th>
+                  <th>Artista / Autor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Escápate Conmigo</td><td>Nene Malo</td></tr>
+                <tr><td>2</td><td>Amigos Con Derecho</td><td>Nene Malo</td></tr>
+                <tr><td>3</td><td>Que Vas A Hacer</td><td>18 kilates</td></tr>
+                <tr><td>4</td><td>No Se Va</td><td>Grupo Frontera</td></tr>
+                <tr><td>5</td><td>Pobre Corazóns</td><td>Ke Personajes</td></tr>
+                <tr><td>6</td><td>Que Vuelvas</td><td>Grupo Frontera</td></tr>
+                <tr><td>7</td><td>Cariño</td><td>La Banda De Lechuga</td></tr>
+                <tr><td>8</td><td>Me Enamoré</td><td>Marilyn</td></tr>
+                <tr><td>9</td><td>Hoy Volvi A Verte</td><td>El Retutu</td></tr>
+                <tr><td>10</td><td>Orgullosa</td><td>Eh Guacho</td></tr>
+                <tr><td>11</td><td>Son De Amores</td><td>18 kilates</td></tr>
+                <tr><td>12</td><td>Me Olvidé De Ti</td><td>18 kilates</td></tr>
+                <tr><td>13</td><td>Te Falta Sufrir</td><td>Marilyn</td></tr>
+                <tr><td>14</td><td>No Me Vuelvo A Enamorar</td><td>Repiola</td></tr>
+                <tr><td>15</td><td>Ya Será Tarde</td><td>18 Kilates</td></tr>
+                <tr><td>16</td><td>Pideme La Luna</td><td>Repiola</td></tr>
+                <tr><td>17</td><td>Bonita</td><td>Marilyn</td></tr>
+                <tr><td>18</td><td>Vuelve A Mi Lado</td><td>Repiola</td></tr>
+                <tr><td>19</td><td>Laura Se Te Ve La Tanga</td><td>Damas Gratis</td></tr>
+                <tr><td>20</td><td>Sabor Sabrosón</td><td>Sabroson</td></tr>
+                <tr><td>21</td><td>Que Calor</td><td>Supermerk2</td></tr>
+                <tr><td>22</td><td>La Resaka</td><td>Supermerk2</td></tr>
+                <tr><td>23</td><td>Oye Mujer</td><td>Ke Personajes</td></tr>
+                <tr><td>24</td><td>Te Pintaron Pajaritos</td><td>El Villano</td></tr>
+                <tr><td>25</td><td>Yo Me Enamoré</td><td>Amar Azul</td></tr>
+                <tr><td>26</td><td>Colegiala</td><td>Repandilla</td></tr>
+                <tr><td>27</td><td>Para No Verte Más/Ver Cumbia</td><td>La Mosca</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="margin-top:14px;">
+            <a class="btn" href="index.html#contacto">Contratación directa</a>
+            <a class="btn btn--ghost" href="index.html">Volver al inicio</a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

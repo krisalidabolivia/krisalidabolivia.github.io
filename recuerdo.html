@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Repertorio Cumbia Del Recuerdo | Agrupación Krisálida</title>
+
+  <!-- Usa tu mismo CSS principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Estilos SOLO para esta página -->
+  <style>
+    /* Fondo con imagen + overlay para que el texto se lea */
+    .page-bg{
+      min-height: 100vh;
+      background:
+        linear-gradient(90deg, rgba(7,17,28,.92), rgba(7,17,28,.55)),
+        url("img/fondoimagen1.png"); /* <-- cambia a .png si tu archivo es png */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .page-wrap{
+      padding: 90px 0 60px;
+    }
+
+    .page-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom: 22px;
+    }
+
+    .page-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .page-brand img{
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      object-fit: cover;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,.45));
+    }
+
+    .page-brand .name{
+      font-weight: 1000;
+      letter-spacing: .3px;
+    }
+
+    .page-hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:start;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 900px){
+      .page-hero{ grid-template-columns: 1fr; }
+    }
+
+    /* Tabla */
+    .table-wrap{
+      overflow:auto;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.28);
+    }
+
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    th, td{
+      padding: 12px 14px;
+      text-align:left;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+
+    th{
+      color: #eaf6ff;
+      font-weight: 1000;
+      background: rgba(255,255,255,.06);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+    }
+
+    td{
+      color: rgba(234,246,255,.92);
+    }
+
+    .taglist{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .tag{
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(247,201,75,.28);
+      background: rgba(255,255,255,.06);
+      font-weight: 800;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .note{
+      margin-top: 12px;
+      font-size: .92rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-bg">
+    <!-- Header simple -->
+    <header class="header">
+      <div class="container header__inner">
+        <a class="brand" href="index.html" aria-label="Volver al inicio">
+          <img src="img/logo.png" alt="Logo Krisálida" class="brand__logo" />
+          <span class="brand__name">Agrupación Krisálida</span>
+        </a>
+
+        <a class="btn btn--small" href="index.html">Volver</a>
+      </div>
+    </header>
+
+    <main class="page-wrap">
+      <div class="container">
+
+        <div class="page-top">
+          <div class="page-brand">
+            <img src="img/logo.png" alt="Logo Krisálida">
+            <div>
+              <div class="name">Agrupación Krisálida</div>
+              <div class="muted small">Repertorio oficial • Contratación directa</div>
+            </div>
+          </div>
+
+          <a class="btn btn--ghost btn--small" href="#tabla">Ver lista de temas ↓</a>
+        </div>
+
+        <section class="page-hero">
+          <div class="card">
+            <h1 class="title-gold">Repertorio Cumbia Del Recuerdo</h1>
+            <p class="muted">
+              Cumbia Clásica con sabor actual: los himnos que marcaron generaciones, 
+              interpretados con energía renovada y estilo propio. Perfecto para bodas, aniversarios y celebraciones familiares.
+            </p>
+
+            <div class="taglist">
+              <span class="tag">Selena</span>
+              <span class="tag">Gilda</span>
+              <span class="tag">Fandango</span>
+              <span class="tag">Aroma</span>
+              <span class="tag">Histeria</span>
+              <span class="tag">Quintanilla</span>
+            </div>
+
+            <p class="note">
+            </p>
+
+            <div style="margin-top:14px;">
+              <a class="btn" href="index.html#contacto">Contratar ahora</a>
+              <a class="btn btn--ghost" href="index.html#servicios">Ver estilos</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>¿Qué incluye este bloque?</h3>
+            <ul class="list">
+              <li>Arranque con clásicos reconocidos</li>
+              <li>Medley romántico y tropical</li>
+              <li>Repertorio tradicional con energía renovada</li>
+              <li>Duración aproximada: 1 hora</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card" id="tabla">
+          <h2>Lista de temas</h2>
+          
+          <div class="table-wrap" style="margin-top:12px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Tema</th>
+                  <th>Artista / Autor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Como La Flor</td><td>Selena</td></tr>
+                <tr><td>2</td><td>Amor Prohibido</td><td>Selena</td></tr>
+                <tr><td>3</td><td>Si Una Vez</td><td>Selena</td></tr>
+                <tr><td>4</td><td>No Me Arrepiento De Este Amor</td><td>Gilda</td></tr>
+                <tr><td>5</td><td>Fuiste</td><td>Gilda</td></tr>
+                <tr><td>6</td><td>Mentías</td><td>Fandango</td></tr>
+                <tr><td>7</td><td>Amor De Tres</td><td>Aroma</td></tr>
+                <tr><td>8</td><td>Muero Por Ti</td><td>Quintanilla</td></tr>
+                <tr><td>9</td><td>Mix Cazzu Con Otra</td><td>Histeria</td></tr>
+                <tr><td>10</td><td>Mix Cazzu Estaba Aqui Pensando</td><td>Histeria</td></tr>
+                <tr><td>11</td><td>Amor Bandido</td><td>Histeria</td></tr>
+                <tr><td>12</td><td>Te Vas Y No Volverás</td><td>Histeria</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="margin-top:14px;">
+            <a class="btn" href="index.html#contacto">Contratación directa</a>
+            <a class="btn btn--ghost" href="index.html">Volver al inicio</a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

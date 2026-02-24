@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galería | Agrupación Krisálida</title>
+
+  <link rel="icon" href="img/logo.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+
+<body>
+    <a id="top"></a>
+
+  <!-- Header -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Volver al inicio">
+        <img src="img/logo.png" alt="Logo Krisálida" class="brand__logo" />
+        <span class="brand__name">Agrupación Krisálida</span>
+      </a>
+
+      <a class="btn btn--small" href="index.html">Volver</a>
+    </div>
+  </header>
+
+  <!-- Hero mini -->
+  <section class="section">
+    <div class="container">
+      <h1 class="title-gold">Galería Completa</h1>
+      <p class="muted">Fotos y videos reales de nuestros shows en vivo.</p>
+
+      <div class="mini-actions" style="margin-top:12px;">
+        <a class="btn btn--ghost btn--small" href="#fotos">Ver fotos</a>
+        <a class="btn btn--ghost btn--small" href="#videos">Ver videos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fotos -->
+  <section class="section section--alt" id="fotos">
+    <div class="container">
+      <div class="section__head">
+        <h2>Fotos</h2>
+        <p class="muted">Momentos reales de eventos, escenario y público.</p>
+      </div>
+
+      <div class="gallery">
+        <img src="img/g1.jpg" alt="Krisálida foto 1" />
+        <img src="img/g2.jpg" alt="Krisálida foto 2" />
+        <img src="img/g3.jpg" alt="Krisálida foto 3" />
+        <img src="img/g4.jpg" alt="Krisálida foto 4" />
+        <img src="img/g5.jpg" alt="Krisálida foto 5" />
+        <img src="img/g6.jpg" alt="Krisálida foto 6" />
+        <img src="img/g7.jpg" alt="Krisálida foto 7" />
+        <img src="img/g8.jpg" alt="Krisálida foto 8" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section class="section" id="videos">
+    <div class="container">
+      <div class="section__head">
+        <h2>Videos</h2>
+        <p class="muted">Mix Composiciones Propias/Pa La Ex/Ya No Digas Nada - Krisálida</p>
+      </div>
+
+      <!-- Video principal -->
+      <div class="card">
+        <h3>Video oficial</h3>
+        <div class="video video--mp4">
+          <video controls playsinline preload="metadata" poster="img/videoportada.png">
+            <source src="krisalida.mp4" type="video/mp4" />
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
+      </div>
+
+      <!-- Shorts -->
+      <div class="card" style="margin-top:18px;">
+        <h3>Videos cortos</h3>
+
+        <div class="shorts-grid" style="margin-top:12px;">
+          <div class="short-card">
+            <video controls playsinline preload="metadata">
+              <source src="short1.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="short-card">
+            <video controls playsinline preload="metadata">
+              <source src="short2.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="short-card">
+            <video controls playsinline preload="metadata">
+              <source src="short3.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="short-card">
+            <video controls playsinline preload="metadata">
+              <source src="short4.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="short-card">
+            <video controls playsinline preload="metadata">
+              <source src="short5.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="short-card">
+            <video controls playsinline preload="metadata">
+              <source src="short6.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="short-card">
+            <video controls playsinline preload="metadata">
+              <source src="short7.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;">
+        <a class="btn btn--ghost btn--small" href="#top">Volver arriba ↑</a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Krisálida. Todos los derechos reservados.</p>
+      <a href="index.html">Inicio</a>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="Cerrar">&times;</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="Imagen ampliada">
+</div>
+
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
