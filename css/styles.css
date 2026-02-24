@@ -1,0 +1,554 @@
+:root{
+  --bg: #07111c;
+  --bg2:#0b2740;
+  --card:#0b1d2f;
+  --text:#eaf6ff;
+  --muted:#b9d7ee;
+  --line: rgba(255,255,255,.12);
+
+  --accent:#18d9d0;
+  --accent2:#2b7cff;
+  --gold:#f7c94b;
+  --gold2:#c9921a;
+
+  --radius: 18px;
+  --shadow: 0 14px 30px rgba(0,0,0,.40);
+}
+
+*{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(900px 500px at 20% 0%, rgba(24,217,208,.28), transparent 60%),
+    radial-gradient(900px 500px at 85% 10%, rgba(43,124,255,.20), transparent 60%),
+    radial-gradient(700px 400px at 50% 90%, rgba(247,201,75,.10), transparent 60%),
+    linear-gradient(180deg, var(--bg2), var(--bg));
+  color:var(--text);
+  line-height:1.6;
+}
+
+img{ max-width:100%; display:block; }
+
+.container{
+  width:min(1100px, 92vw);
+  margin:0 auto;
+}
+
+.section{
+  padding: 10px 0;
+}
+
+.section--alt{
+  background: linear-gradient(180deg, transparent, rgba(255,255,255,.04), transparent);
+}
+
+h1,h2,h3{ margin:0 0 12px; }
+
+h1{
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+}
+
+h2{
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+}
+
+.lead{
+  font-size: 1.05rem;
+  max-width: 60ch;
+}
+
+.muted{ color: var(--muted); }
+.small{ font-size:.9rem; }
+
+a{ text-decoration:none; color:inherit; }
+
+/* Título dorado */
+.title-gold{
+  background: linear-gradient(180deg, #fff7d1, var(--gold), var(--gold2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+/* Botones */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color:#061018;
+  font-weight:900;
+  border:none;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn--ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.3);
+  color:var(--text);
+}
+
+.btn--small{
+  padding:8px 14px;
+  font-size:.9rem;
+}
+
+/* Header */
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(7,17,28,.85);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+
+.header__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 0;
+}
+
+.header__inner{
+  position:relative;
+}
+
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand__logo{
+  width:36px;
+  height:36px;
+}
+
+.brand__name{
+  font-weight:900;
+}
+
+.nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+
+.nav a{
+  font-weight:700;
+  color:var(--muted);
+}
+
+.nav a:hover{
+  color:var(--text);
+}
+
+.nav__toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:22px;
+  color:white;
+  cursor:pointer;
+}
+
+/* Hero */
+.hero{
+  position:relative;
+  padding:100px 0 80px;
+}
+
+.hero__bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(7,17,28,.9), rgba(7,17,28,.3)),
+    url("../img/hero.jpg");
+  background-size:cover;
+  background-position:center;
+}
+
+.hero__content{
+  position:relative;
+}
+
+.badge{
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid rgba(247,201,75,.4);
+  display:inline-block;
+  margin-bottom:14px;
+}
+
+/* Stats */
+.hero__stats{
+  display:flex;
+  gap:14px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+.stat{
+  padding:10px 14px;
+  background:rgba(255,255,255,.06);
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.15);
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  gap:20px;
+}
+
+.grid--2{
+  grid-template-columns:1fr 1fr;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:20px;
+}
+
+
+.card{
+  background:rgba(11,29,47,.85);
+  padding:18px;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:var(--shadow);
+}
+
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:10px 0;
+}
+
+.chip{
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.15);
+  font-size:.85rem;
+}
+
+/* VIDEO MP4 AJUSTADO */
+/* VIDEO MP4 HORIZONTAL (16:9) */
+.video--mp4{
+  border-radius:16px;
+  overflow:hidden;
+  background:#000;
+  aspect-ratio: 16 / 9; /* ✅ siempre horizontal */
+}
+
+.video--mp4 video{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;  /* ✅ no recorta, mantiene horizontal */
+  background:#000;
+}
+
+/* Redes */
+.social-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:12px;
+}
+
+.social-btn{
+  padding:12px;
+  border-radius:14px;
+  background:rgba(0,0,0,.25);
+  border:1px solid rgba(255,255,255,.2);
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.social-btn:hover{
+  border-color:var(--accent);
+}
+
+.social-dot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--gold),var(--accent));
+}
+
+/* Galería */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.gallery img{
+  height:200px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* Formulario */
+.form label{
+  display:block;
+  margin-top:12px;
+  font-weight:700;
+}
+
+input, select, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(0,0,0,.3);
+  color:white;
+}
+
+/* Footer */
+.footer{
+  padding:30px 0;
+  text-align:center;
+  border-top:1px solid var(--line);
+  margin-top:60px;
+}
+
+/* WhatsApp flotante */
+.whatsapp-menu{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:999;
+}
+
+.whatsapp-main{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  padding:12px 16px;
+  border-radius:999px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.whatsapp-options{
+  display:none;
+  margin-bottom:10px;
+}
+
+.whatsapp-menu.is-open .whatsapp-options{
+  display:block;
+}
+
+.whatsapp-options a{
+  display:block;
+  margin:6px 0;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(0,0,0,.4);
+  border:1px solid rgba(255,255,255,.2);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .cards{ grid-template-columns:1fr; }
+  .grid--2{ grid-template-columns:1fr; }
+  .gallery{ grid-template-columns:1fr 1fr; }
+}
+
+@media (max-width: 720px){
+  .nav__toggle{ display:block; }
+
+  .nav{
+    display:none; /* oculto por defecto */
+    position:absolute;
+    top:62px;
+    right:12px;
+    width:min(260px, calc(100vw - 24px));
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    padding:14px;
+    border-radius:16px;
+    background: rgba(7,17,28,.95);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+  }
+
+  .nav.active{
+    display:flex; /* ✅ se muestra cuando JS añade "active" */
+  }
+
+  .nav a{
+    width:100%;
+    padding:10px 12px;
+    border-radius:12px;
+    color: var(--muted);
+  }
+
+  .nav a:hover{
+    color: var(--text);
+    background: rgba(255,255,255,.06);
+  }
+}
+
+
+/* Videos Cortos */
+.shorts-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.short-card{
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:var(--shadow);
+  background:#000;
+}
+
+.short-card video{
+  width:100%;
+  height:420px;      /* tamaño tipo reel */
+  object-fit:cover;
+  display:block;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .shorts-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width:600px){
+  .shorts-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* Hero título con logo */
+.hero-title{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.hero-logo{
+  width:90px;          /* puedes subir a 110px si quieres más grande */
+  height:auto;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,.5));
+}
+
+/* En celular que el logo quede arriba */
+@media (max-width:600px){
+  .hero-title{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .hero-logo{
+    width:70px;
+  }
+}
+
+.card{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.card .btn{
+  margin-top:15px;
+  align-self:flex-start;
+}
+
+.social-btn{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.social-icon{
+  width:20px;
+  height:20px;
+}
+
+/* Colores oficiales */
+.spotify{ color:#1DB954; }
+.youtube{ color:#FF0000; }
+.tiktok{ color:#ffffff; }
+.facebook{ color:#1877F2; }
+
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  padding:20px;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.7);
+}
+
+.lightbox-close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+}
+
+/* cursor en imágenes */
+.gallery img{
+  cursor:pointer;
+  transition: transform .2s ease;
+}
+
+.gallery img:hover{
+  transform:scale(1.03);
+}
+
+/* ✅ cuando se abre */
+.lightbox.is-open{
+  display:flex;
+}
+
+.lightbox-img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.7);
+}
+
