@@ -177,7 +177,7 @@ a{ text-decoration:none; color:inherit; }
   inset:0;
   background:
     linear-gradient(90deg, rgba(7,17,28,.9), rgba(7,17,28,.3)),
-    url("../img/hero.jpg");
+    url("../img/hero1.jpg");
   background-size:cover;
   background-position:center;
 }
@@ -551,4 +551,5 @@ input, select, textarea{
   border-radius:18px;
   box-shadow:0 20px 60px rgba(0,0,0,.7);
 }
+
 
